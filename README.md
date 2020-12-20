@@ -10,6 +10,7 @@
   - Go (Caso necessite realizar teste fora do Docker)
   - Docker 
   - Docker Compose
+  - Caso utiliza algum ambiente com firewall, favor liberar as portas 80, 8088 para acesso ao app e phmyadmin respectivamente.
 
 ## Instalação: 
   - Executar Arquivo deploy.sh, cuja o mesmo irá realizar a Instalação das dependencias, 
