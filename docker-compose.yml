@@ -1,0 +1,42 @@
+version: '3.3'
+volumes:
+  data:
+services:
+  db:
+    image: mysql:5.6
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQL_DATABASE
+    networks: 
+      - golang
+  db-app:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - db
+    ports:
+      - 8088:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks: 
+      - golang
+  app:
+    build: .
+    links:
+    - db
+    networks: 
+    - golang
+  nginx:
+     build: ./nginx
+     links: 
+      - app
+     ports:
+      - 80:80
+     networks: 
+      - golang
+networks: 
+  golang:
+
+
+    
