@@ -3,7 +3,7 @@
   - APP (Go) porta 9000 (não exposta)
   - PhpMyAdmin porta 8088 (exposta)
   - Mysql porta 3306 (não exposta)
-  - Nginx porta 80 (não exposta)
+  - Nginx porta 80 (exposta)
   
 
  ## Dependencias: 
